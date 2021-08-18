@@ -1,0 +1,16 @@
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/bin/Debug/net5.0/HelloCsharp
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/bin/Debug/net5.0/HelloCsharp.deps.json
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/bin/Debug/net5.0/HelloCsharp.runtimeconfig.json
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/bin/Debug/net5.0/HelloCsharp.runtimeconfig.dev.json
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/bin/Debug/net5.0/HelloCsharp.dll
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/bin/Debug/net5.0/ref/HelloCsharp.dll
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/bin/Debug/net5.0/HelloCsharp.pdb
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/obj/Debug/net5.0/HelloCsharp.csproj.AssemblyReference.cache
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/obj/Debug/net5.0/HelloCsharp.GeneratedMSBuildEditorConfig.editorconfig
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/obj/Debug/net5.0/HelloCsharp.AssemblyInfoInputs.cache
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/obj/Debug/net5.0/HelloCsharp.AssemblyInfo.cs
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/obj/Debug/net5.0/HelloCsharp.csproj.CoreCompileInputs.cache
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/obj/Debug/net5.0/HelloCsharp.dll
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/obj/Debug/net5.0/ref/HelloCsharp.dll
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/obj/Debug/net5.0/HelloCsharp.pdb
+/home/gulom/revature/gulomjon_repo/week_1/HelloCsharp/obj/Debug/net5.0/HelloCsharp.genruntimeconfig.cache
