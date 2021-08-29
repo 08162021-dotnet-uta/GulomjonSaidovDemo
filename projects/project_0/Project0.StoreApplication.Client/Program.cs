@@ -10,7 +10,7 @@ namespace Project0.StoreApplication.Client
 
     static void Main(string[] args)
     {
-      Log.Logger = new LoggerConfiguration().WriteTo.File(_logFilePath).CreateLogger();
+      Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 
       Log.Information("Logging Started!");
 
@@ -28,7 +28,7 @@ namespace Project0.StoreApplication.Client
       foreach (var store in storeRepository.Stores)
       {
 
-        Console.WriteLine(store.Name);
+        Console.WriteLine(store);
       }
     }
 
@@ -43,7 +43,7 @@ namespace Project0.StoreApplication.Client
 
       Log.Information("Input captured \"CaptureInput()\": {selected}", selected);
 
-      return selected;
+      return selected - 1;
     }
 
     private void CaptureOutput()

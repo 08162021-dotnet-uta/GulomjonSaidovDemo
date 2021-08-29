@@ -18,27 +18,27 @@ namespace Project0.StoreApplication.Testing
       Assert.NotNull(actual);
     }
 
-    [Theory]
-    [InlineData(0)]
-    [InlineData(1)]
-    public void Test_OneStore(int i)
-    {
-      var sut = new StoreRepository();
+    // [Theory]
+    // [InlineData(0)]
+    // [InlineData(1)]
+    // public void Test_OneStore(int i)
+    // {
+    //   var sut = new StoreRepository();
 
-      var store = sut.GetStore(i);
+    //   var store = sut.GetStore(i);
 
-      Assert.NotNull(store);
-    }
+    //   Assert.NotNull(store);
+    // }
 
-    [Theory]
-    [InlineData(10)]
-    public void Test_NullStore(int i)
-    {
-      var sut = new StoreRepository();
+    // [Theory]
+    // [InlineData(10)]
+    // public void Test_NullStore(int i)
+    // {
+    //   var sut = new StoreRepository();
 
-      var store = sut.GetStore(i);
+    //   var store = sut.GetStore(i);
 
-      Assert.Null(store);
-    }
+    //   Assert.Null(store);
+    // }
   }
 }

@@ -1,6 +1,0 @@
-2021-08-28 18:17:25.509 -07:00 [INF] Logging Started!
-2021-08-28 18:17:25.516 -07:00 [INF] Method CaptureOutput()
-2021-08-28 18:17:27.237 -07:00 [INF] Input captured "CaptureInput()": 2
-2021-08-28 20:35:13.440 -07:00 [INF] Logging Started!
-2021-08-28 20:35:13.446 -07:00 [INF] Method CaptureOutput()
-2021-08-28 20:35:16.411 -07:00 [INF] Input captured "CaptureInput()": 2
