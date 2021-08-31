@@ -1,56 +1,61 @@
 using System.Collections.Generic;
 using Project0.StoreApplication.Domain.Abstracts;
+using Project0.StoreApplication.Domain.Interfaces;
 using Project0.StoreApplication.Domain.Models;
 using Project0.StoreApplication.Storage.Adapters;
 
 namespace Project0.StoreApplication.Storage.Repositories
 {
-  public class StoreRepository
+  public class StoreRepository : IRepository<Store>
   {
-    public List<Store> Stores { get; }
+    private const string _path = @"/home/gulom/revature/gulomjon_repo/data/stores.xml";
+
+    private static readonly FileAdapter _fileAdapter = new FileAdapter();
 
     public StoreRepository()
     {
-      // Stores = new List<Store>()
-      // {
-      //   new Central(),
-      //   new Stonestown(),
-      //   new West(),
-      // };
-      var fileAdapter = new FileAdapter();
 
-      // if (fileAdapter.ReadFromFile() == null)
-      // {
-      //   fileAdapter.WriteToFile(new List<Store>()
-      //   {
-      //     new Central(),
-      //     new West(),
-      //     new West()
-      //     // new Colma()
-      //   });
-      // }
-      fileAdapter.WriteToFile(new List<Store>()
+      if (_fileAdapter.ReadFromFile<Store>(_path) == null)
+      {
+        _fileAdapter.WriteToFile<Store>(_path, new List<Store>()
         {
+          new Colma(),
           new Central(),
           new West(),
-          new West(),
-          new Colma(),
+          new Stonestown()
         });
+      }
 
-
-      Stores = fileAdapter.ReadFromFile();
     }
 
-    // public Store GetStore(int index)
-    // {
-    //   try
-    //   {
-    //     return Stores[index];
-    //   }
-    //   catch
-    //   {
-    //     return null;  
-    //   }
-    // }
+    public bool Delete()
+    {
+      throw new System.NotImplementedException();
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public bool Insert(Store entry)
+    {
+      _fileAdapter.WriteToFile<Store>(_path, new List<Store> { entry });
+
+      return true;
+    }
+
+    public List<Store> Select()
+    {
+      return _fileAdapter.ReadFromFile<Store>(_path);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public Store Update()
+    {
+      throw new System.NotImplementedException();
+    }
   }
 }

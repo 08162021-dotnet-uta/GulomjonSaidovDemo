@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Order>
+    <OrderId>1</OrderId>
+    <CustomerId>1</CustomerId>
+    <OrderDate>2021-08-31T00:18:17.1256597-07:00</OrderDate>
+    <StoreId>0</StoreId>
+  </Order>
+</ArrayOfOrder>

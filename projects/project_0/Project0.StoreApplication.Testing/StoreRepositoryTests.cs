@@ -12,12 +12,41 @@ namespace Project0.StoreApplication.Testing
       var sut = new StoreRepository();
 
       // act = execute sut for data
-      var actual = sut.Stores;
+      var actual = sut.Select();
 
       // assert
       Assert.NotNull(actual);
     }
+    public class CustomerRepositoryTests
+    {
+      [Fact]
+      public void Test_CustomerCollection()
+      {
+        // arrange = instance of the entity to test
+        var sut = new CustomerRepository();
 
+        // act = execute sut for data
+        var actual = sut.Select();
+
+        // assert
+        Assert.NotNull(actual);
+      }
+    }
+    public class ProductRepositoryTests
+    {
+      [Fact]
+      public void Product_CustomerCollection()
+      {
+        // arrange = instance of the entity to test
+        var sut = new ProductRepository();
+
+        // act = execute sut for data
+        var actual = sut.Select();
+
+        // assert
+        Assert.NotNull(actual);
+      }
+    }
     // [Theory]
     // [InlineData(0)]
     // [InlineData(1)]

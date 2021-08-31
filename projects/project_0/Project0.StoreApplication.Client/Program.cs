@@ -1,57 +1,92 @@
 ﻿using System;
-using Project0.StoreApplication.Storage.Repositories;
+using System.Collections.Generic;
+using Project0.StoreApplication.Client.Singletons;
+using Project0.StoreApplication.Domain.Abstracts;
+using Project0.StoreApplication.Domain.Models;
 using Serilog;
+
 
 namespace Project0.StoreApplication.Client
 {
-  public class Program
+  /// <summary>
+  /// Defines the Program Class
+  /// </summary>
+  internal class Program
   {
+    private static readonly CustomerSingleton _customerSingleton = CustomerSingleton.Instance;
+    private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
+    private static readonly ProductSingleton _productSingleton = ProductSingleton.Instance;
+    private static readonly OrderSingleton _orderSingleton = OrderSingleton.Instance;
     private const string _logFilePath = @"/home/gulom/revature/gulomjon_repo/data/logs.txt";
 
-    static void Main(string[] args)
+    /// <summary>
+    /// Defines the Main method of Program Class
+    /// </summary>
+    /// <param name="args"></param>
+    private static void Main(string[] args)
     {
-      Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 
-      Log.Information("Logging Started!");
-
-      var program = new Program();
-
-      program.CaptureOutput();
-
-
+      Run();
     }
 
-    private void OutputStores()
+    /// <summary>
+    /// Defines Run function
+    /// </summary>
+    private static void Run()
     {
-      var storeRepository = new StoreRepository();
+      Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+      Log.Information("Logging Started!");
 
-      foreach (var store in storeRepository.Stores)
+      if (_customerSingleton.Customers.Count == 0)
+      {
+        _customerSingleton.Add(new Customer());
+      }
+
+      var customer = _customerSingleton.Customers[Capture<Customer>(_customerSingleton.Customers)];
+      var store = _storeSingleton.Stores[Capture<Store>(_storeSingleton.Stores)];
+      var order = _orderSingleton.Orders[Capture<Order>(_orderSingleton.Orders)];
+
+      // Output<Store>(_storeSingleton.Stores);
+      // customers
+      // Output<Customer>(_customerSingleton.Customers);
+      // // products
+      // Output<Product>(_productSingleton.Products);
+
+      Console.WriteLine(customer);
+    }
+
+    /// <summary>
+    /// Prints all the stores
+    /// </summary>
+    private static void Output<T>(List<T> data) where T : class
+    {
+      Log.Information($"Method: Output<{typeof(T)}>");
+      var index = 0;
+
+      foreach (var item in data)
       {
 
-        Console.WriteLine(store);
+        Console.WriteLine($"[{++index}] - {item}");
       }
     }
 
-    private int CaptureInput()
+    /// <summary>
+    /// Captures user input
+    /// </summary>
+    /// <returns></returns>
+    private static int Capture<T>(List<T> data) where T : class
     {
-      OutputStores();
+      Log.Information("method: Capture()");
 
-      Console.WriteLine("Please pick a store:");
+      Output<T>(data);
 
-      // capture customer input
+      Console.WriteLine("Please choose your option: ");
+
       int selected = int.Parse(Console.ReadLine());
 
       Log.Information("Input captured \"CaptureInput()\": {selected}", selected);
 
       return selected - 1;
-    }
-
-    private void CaptureOutput()
-    {
-      Log.Information("Method CaptureOutput()");
-
-      var storeRepository = new StoreRepository();
-      Console.WriteLine($"You have selected {storeRepository.Stores[CaptureInput()]}");
     }
   }
 }

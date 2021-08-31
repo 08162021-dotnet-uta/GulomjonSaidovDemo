@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Product>
+    <ProductId>1</ProductId>
+    <Name>Dell XPS 15.4</Name>
+    <Price>1500</Price>
+    <StoreId>1</StoreId>
+  </Product>
+  <Product>
+    <ProductId>1</ProductId>
+    <Name>Dell XPS 15.4</Name>
+    <Price>1500</Price>
+    <StoreId>2</StoreId>
+  </Product>
+  <Product>
+    <ProductId>1</ProductId>
+    <Name>Dell XPS 15.4</Name>
+    <Price>1500</Price>
+    <StoreId>3</StoreId>
+  </Product>
+</ArrayOfProduct>
