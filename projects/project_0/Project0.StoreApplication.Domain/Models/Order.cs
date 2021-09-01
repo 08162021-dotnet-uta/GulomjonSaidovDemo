@@ -10,9 +10,9 @@ namespace Project0.StoreApplication.Domain.Models
   public class Order
   {
     public int OrderId { get; set; }
-    public int CustomerId { get; set; }
+    public Customer Customer { get; set; }
     public DateTime OrderDate { get; set; }
-    public int StoreId { get; set; }
+    public Store Store { get; set; }
     // public List<Product> Products { get; set; }
   }
 }

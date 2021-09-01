@@ -20,7 +20,7 @@ namespace Project0.StoreApplication.Storage.Repositories
       {
         _fileAdapter.WriteToFile<Order>(_path, new List<Order>()
         {
-          new Order(){OrderId = 1, CustomerId = 1, OrderDate = DateTime.Now.ToLocalTime()}
+          new Order(){OrderId = 1, Customer = new Customer(){Name="Mike"}, OrderDate = DateTime.Now.ToLocalTime(), Store=new Colma()}
         });
       }
     }

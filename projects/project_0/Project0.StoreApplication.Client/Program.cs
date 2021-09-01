@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Project0.StoreApplication.Client.Singletons;
 using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Models;
+using Project0.StoreApplication.Storage;
 using Serilog;
 
 
@@ -87,6 +88,17 @@ namespace Project0.StoreApplication.Client
       Log.Information("Input captured \"CaptureInput()\": {selected}", selected);
 
       return selected - 1;
+    }
+
+    private static void HelloSQL()
+    {
+      var def = new DemoEF();
+
+      foreach (var item in def.GetCustomers())
+      {
+        Console.WriteLine(item);
+      }
+
     }
   }
 }
