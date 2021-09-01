@@ -19,10 +19,10 @@ namespace Project0.StoreApplication.Storage.Repositories
       {
         _fileAdapter.WriteToFile<Store>(_path, new List<Store>()
         {
-          new Colma(),
-          new Central(),
-          new West(),
-          new Stonestown()
+          new Colma(){StoreId = 1},
+          new Central(){StoreId = 2},
+          new West(){StoreId = 3},
+          new Stonestown(){StoreId = 4}
         });
       }
 
@@ -30,7 +30,7 @@ namespace Project0.StoreApplication.Storage.Repositories
 
     public bool Delete()
     {
-      throw new System.NotImplementedException();
+      throw new System.NotImplementedException("Not implemented yet");
     }
 
     /// <summary>

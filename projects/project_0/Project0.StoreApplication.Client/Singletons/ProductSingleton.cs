@@ -44,5 +44,10 @@ namespace Project0.StoreApplication.Client.Singletons
       _productRepository.Insert(product);
       Products = _productRepository.Select();
     }
+    public void Append(Product product)
+    {
+      _productRepository.Append(product);
+      Products = _productRepository.Select();
+    }
   }
 }

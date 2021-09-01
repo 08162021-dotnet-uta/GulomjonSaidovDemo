@@ -13,12 +13,12 @@ namespace Project0.StoreApplication.Domain.Models
 
     public Customer()
     {
-      // Name = "Gulomjon";
+      Orders = new List<Order>();
     }
 
     public override string ToString()
     {
-      return $"{Name} has {Orders.Count} orders.";
+      return Name;
     }
   }
 }

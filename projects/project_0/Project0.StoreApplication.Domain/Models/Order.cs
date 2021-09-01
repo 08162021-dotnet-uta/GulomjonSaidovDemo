@@ -13,6 +13,11 @@ namespace Project0.StoreApplication.Domain.Models
     public Customer Customer { get; set; }
     public DateTime OrderDate { get; set; }
     public Store Store { get; set; }
-    // public List<Product> Products { get; set; }
+    public Product Product { get; set; }
+
+    public override string ToString()
+    {
+      return $"{Customer} - {OrderDate} - {Product} -{Store}";
+    }
   }
 }

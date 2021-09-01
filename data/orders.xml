@@ -1,13 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Order>
-    <OrderId>1</OrderId>
+    <OrderId>0</OrderId>
     <Customer>
-      <Name>Mike</Name>
+      <Name>olmos</Name>
+      <CustomerId>0</CustomerId>
+      <Orders />
     </Customer>
-    <OrderDate>2021-08-31T06:20:36.0887657-07:00</OrderDate>
+    <OrderDate>2021-09-01T05:00:29.1226892-07:00</OrderDate>
     <Store xsi:type="Colma">
       <Name>Colma on Junipero Serra Blvd</Name>
+      <StoreId>1</StoreId>
+      <Orders />
+      <Products />
     </Store>
+    <Product>
+      <ProductId>1</ProductId>
+      <Name>Dell XPS 15.4</Name>
+      <Price>1500</Price>
+    </Product>
+  </Order>
+  <Order>
+    <OrderId>0</OrderId>
+    <Customer>
+      <Name>Gulomjon</Name>
+      <CustomerId>0</CustomerId>
+      <Orders />
+    </Customer>
+    <OrderDate>2021-09-01T05:04:54.465982-07:00</OrderDate>
+    <Store xsi:type="Central">
+      <Name>San Francisco Central at Mission and 4th</Name>
+      <StoreId>2</StoreId>
+      <Orders />
+      <Products />
+    </Store>
+    <Product>
+      <ProductId>0</ProductId>
+      <Name>Phone</Name>
+      <Price>1100</Price>
+    </Product>
+  </Order>
+  <Order>
+    <OrderId>0</OrderId>
+    <Customer>
+      <Name>Mike</Name>
+      <CustomerId>0</CustomerId>
+      <Orders />
+    </Customer>
+    <OrderDate>2021-09-01T05:58:13.6630121-07:00</OrderDate>
+    <Store xsi:type="Colma">
+      <Name>Colma on Junipero Serra Blvd</Name>
+      <StoreId>1</StoreId>
+      <Orders />
+      <Products />
+    </Store>
+    <Product>
+      <ProductId>1</ProductId>
+      <Name>Dell XPS 15.4</Name>
+      <Price>1500</Price>
+    </Product>
+  </Order>
+  <Order>
+    <OrderId>0</OrderId>
+    <Customer>
+      <Name>gulom</Name>
+      <CustomerId>0</CustomerId>
+      <Orders />
+    </Customer>
+    <OrderDate>2021-09-01T06:28:34.7373026-07:00</OrderDate>
+    <Store xsi:type="Central">
+      <Name>San Francisco Central at Mission and 4th</Name>
+      <StoreId>2</StoreId>
+      <Orders />
+      <Products />
+    </Store>
+    <Product>
+      <ProductId>1</ProductId>
+      <Name>Dell XPS 15.4</Name>
+      <Price>1500</Price>
+    </Product>
+  </Order>
+  <Order>
+    <OrderId>0</OrderId>
+    <Customer>
+      <Name>gulom</Name>
+      <CustomerId>0</CustomerId>
+      <Orders />
+    </Customer>
+    <OrderDate>2021-09-01T06:28:59.240775-07:00</OrderDate>
+    <Store xsi:type="Colma">
+      <Name>Colma on Junipero Serra Blvd</Name>
+      <StoreId>1</StoreId>
+      <Orders />
+      <Products />
+    </Store>
+    <Product>
+      <ProductId>3</ProductId>
+      <Name>Galaxy Note</Name>
+      <Price>150</Price>
+    </Product>
+  </Order>
+  <Order>
+    <OrderId>0</OrderId>
+    <Customer>
+      <Name>gulom</Name>
+      <CustomerId>0</CustomerId>
+      <Orders />
+    </Customer>
+    <OrderDate>2021-09-01T06:30:45.9842387-07:00</OrderDate>
+    <Store xsi:type="Central">
+      <Name>San Francisco Central at Mission and 4th</Name>
+      <StoreId>2</StoreId>
+      <Orders />
+      <Products />
+    </Store>
+    <Product>
+      <ProductId>3</ProductId>
+      <Name>Galaxy Note</Name>
+      <Price>150</Price>
+    </Product>
   </Order>
 </ArrayOfOrder>

@@ -44,5 +44,10 @@ namespace Project0.StoreApplication.Client.Singletons
       _orderRepository.Insert(order);
       Orders = _orderRepository.Select();
     }
+    public void Append(Order order)
+    {
+      _orderRepository.Append(order);
+      Orders = _orderRepository.Select();
+    }
   }
 }

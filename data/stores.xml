@@ -2,14 +2,26 @@
 <ArrayOfStore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Store xsi:type="Colma">
     <Name>Colma on Junipero Serra Blvd</Name>
+    <StoreId>1</StoreId>
+    <Orders />
+    <Products />
   </Store>
   <Store xsi:type="Central">
     <Name>San Francisco Central at Mission and 4th</Name>
+    <StoreId>2</StoreId>
+    <Orders />
+    <Products />
   </Store>
   <Store xsi:type="West">
     <Name>San Francisco West at Geary and Masonic</Name>
+    <StoreId>3</StoreId>
+    <Orders />
+    <Products />
   </Store>
   <Store xsi:type="Stonestown">
     <Name>San Francisco Stonestown on 19th Avenue</Name>
+    <StoreId>4</StoreId>
+    <Orders />
+    <Products />
   </Store>
 </ArrayOfStore>

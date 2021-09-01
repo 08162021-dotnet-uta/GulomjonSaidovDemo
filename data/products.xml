@@ -4,18 +4,40 @@
     <ProductId>1</ProductId>
     <Name>Dell XPS 15.4</Name>
     <Price>1500</Price>
-    <StoreId>1</StoreId>
   </Product>
   <Product>
-    <ProductId>1</ProductId>
-    <Name>Dell XPS 15.4</Name>
-    <Price>1500</Price>
-    <StoreId>2</StoreId>
+    <ProductId>2</ProductId>
+    <Name>Monitor</Name>
+    <Price>1000</Price>
   </Product>
   <Product>
-    <ProductId>1</ProductId>
-    <Name>Dell XPS 15.4</Name>
-    <Price>1500</Price>
-    <StoreId>3</StoreId>
+    <ProductId>3</ProductId>
+    <Name>Galaxy Note</Name>
+    <Price>150</Price>
+  </Product>
+  <Product>
+    <ProductId>4</ProductId>
+    <Name>HP 17</Name>
+    <Price>500</Price>
+  </Product>
+  <Product>
+    <ProductId>5</ProductId>
+    <Name>Samsung Tablet</Name>
+    <Price>800</Price>
+  </Product>
+  <Product>
+    <ProductId>6</ProductId>
+    <Name>Bose II Head Phone</Name>
+    <Price>300</Price>
+  </Product>
+  <Product>
+    <ProductId>7</ProductId>
+    <Name>Logitech Wireless Keyboard</Name>
+    <Price>50</Price>
+  </Product>
+  <Product>
+    <ProductId>0</ProductId>
+    <Name>Phone</Name>
+    <Price>1100</Price>
   </Product>
 </ArrayOfProduct>

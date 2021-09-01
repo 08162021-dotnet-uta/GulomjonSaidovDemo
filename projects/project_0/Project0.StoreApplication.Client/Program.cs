@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using Project0.StoreApplication.Client.Singletons;
 using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Models;
-using Project0.StoreApplication.Storage;
 using Serilog;
-
 
 namespace Project0.StoreApplication.Client
 {
@@ -35,25 +33,75 @@ namespace Project0.StoreApplication.Client
     /// </summary>
     private static void Run()
     {
-      Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+      Log.Logger = new LoggerConfiguration().WriteTo.File(_logFilePath).CreateLogger();
       Log.Information("Logging Started!");
+      // var customer = _customerSingleton.Customers[Capture<Customer>(_customerSingleton.Customers)];
 
-      if (_customerSingleton.Customers.Count == 0)
+      bool unsuccessful;
+      int num1;
+      do
       {
-        _customerSingleton.Add(new Customer());
+        Console.WriteLine("Welcome to Target! Are you a customer or store manager?");
+        Console.WriteLine("Press 1 for customer, 2 for Store Manager.");
+        string input = Console.ReadLine();
+        unsuccessful = int.TryParse(input, out num1);
+      } while (!unsuccessful || num1 < 1 || num1 > 2);
+
+      if (num1 == 1)
+      {
+        var store = _storeSingleton.Stores[Capture<Store>(_storeSingleton.Stores)];
+
+        Console.WriteLine("You selected {0}", store);
+
+        var product = _productSingleton.Products[Capture<Product>(_productSingleton.Products)];
+        Console.WriteLine("You have selected {0}.\n1 - Confirm to purchase\n2 - Decline to purchase", product);
+        var input = int.Parse(Console.ReadLine());
+        if (input == 1)
+        {
+          Console.WriteLine("Please enter your name:");
+          var name = Console.ReadLine();
+          var customer = new Customer() { Name = name };
+          _orderSingleton.Append(new Order()
+          {
+            OrderDate = DateTime.Now.ToLocalTime(),
+            Product = product,
+            Customer = customer,
+            Store = store
+          });
+
+          OutputPastPurchase(name);
+        }
+        else
+        {
+          Run();
+        }
+
+      }
+      else
+      {
+        Console.WriteLine("Option:\nPress 1 - view past purchases\nPress 2 - add a Product");
+        var input = Console.ReadLine();
+        if (input == "1")
+        {
+          Output<Order>(_orderSingleton.Orders);
+        }
+        else if (input == "2")
+        {
+          Console.WriteLine("Enter product name:");
+          var name = Console.ReadLine();
+          Console.WriteLine("Enter product price:");
+          var price = Decimal.Parse(Console.ReadLine());
+
+          _productSingleton.Append(new Product() { Name = name, Price = price });
+          Console.WriteLine("Successfully added");
+        }
+        else
+        {
+          Console.WriteLine("Option:\nPress 1 - view past purchases\nPress 2 - add a Product");
+        }
       }
 
-      var customer = _customerSingleton.Customers[Capture<Customer>(_customerSingleton.Customers)];
-      var store = _storeSingleton.Stores[Capture<Store>(_storeSingleton.Stores)];
-      var order = _orderSingleton.Orders[Capture<Order>(_orderSingleton.Orders)];
 
-      // Output<Store>(_storeSingleton.Stores);
-      // customers
-      // Output<Customer>(_customerSingleton.Customers);
-      // // products
-      // Output<Product>(_productSingleton.Products);
-
-      Console.WriteLine(customer);
     }
 
     /// <summary>
@@ -68,6 +116,18 @@ namespace Project0.StoreApplication.Client
       {
 
         Console.WriteLine($"[{++index}] - {item}");
+      }
+    }
+
+    private static void OutputPastPurchase(string name)
+    {
+      // var orders = new List<Order>();
+      foreach (var order in _orderSingleton.Orders)
+      {
+        if (order.Customer.Name == name)
+        {
+          Console.WriteLine(order);
+        }
       }
     }
 
@@ -90,15 +150,17 @@ namespace Project0.StoreApplication.Client
       return selected - 1;
     }
 
-    private static void HelloSQL()
-    {
-      var def = new DemoEF();
+    // private static void HelloSQL()
+    // {
+    //   var def = new DemoEF();
 
-      foreach (var item in def.GetCustomers())
-      {
-        Console.WriteLine(item);
-      }
+    //   def.SetCustomer(new Customer());
 
-    }
+    //   foreach (var item in def.GetCustomers())
+    //   {
+    //     Console.WriteLine(item);
+    //   }
+
+    // }
   }
 }

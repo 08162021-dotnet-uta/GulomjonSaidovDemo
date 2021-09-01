@@ -18,10 +18,7 @@ namespace Project0.StoreApplication.Storage.Repositories
     {
       if (_fileAdapter.ReadFromFile<Order>(_path) == null)
       {
-        _fileAdapter.WriteToFile<Order>(_path, new List<Order>()
-        {
-          new Order(){OrderId = 1, Customer = new Customer(){Name="Mike"}, OrderDate = DateTime.Now.ToLocalTime(), Store=new Colma()}
-        });
+        _fileAdapter.WriteToFile<Order>(_path, new List<Order>());
       }
     }
 
@@ -61,6 +58,19 @@ namespace Project0.StoreApplication.Storage.Repositories
     public Order Update()
     {
       throw new System.NotImplementedException();
+    }
+    /// <summary>
+    /// Appends single order object to the Order collection in objects.xml file
+    /// </summary>
+    /// <param name="entry"></param>
+    /// <returns></returns>
+    public bool Append(Order entry)
+    {
+      var orders = _fileAdapter.ReadFromFile<Order>(_path);
+      orders.Add(entry);
+      _fileAdapter.WriteToFile<Order>(_path, orders);
+
+      return true;
     }
   }
 }

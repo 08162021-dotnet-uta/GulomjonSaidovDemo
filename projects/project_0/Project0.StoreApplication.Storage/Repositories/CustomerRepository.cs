@@ -19,8 +19,8 @@ namespace Project0.StoreApplication.Storage.Repositories
       {
         _fileAdapter.WriteToFile<Customer>(_path, new List<Customer>()
         {
-          new Customer(){Name = "Mike"},
-          new Customer(){Name = "Johnson"}
+          // new Customer(){Name = "Mike"},
+          // new Customer(){Name = "Johnson"}
         });
       }
     }
