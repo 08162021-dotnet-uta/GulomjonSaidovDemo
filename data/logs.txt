@@ -53,3 +53,4 @@
 2021-09-09 18:16:24.730 -07:00 [INF] Input captured "CaptureInput()": 9
 2021-09-09 18:16:27.890 -07:00 [INF] Logging Started!
 2021-09-09 18:16:32.082 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Order>
+2021-09-09 18:26:33.761 -07:00 [INF] Logging Started!

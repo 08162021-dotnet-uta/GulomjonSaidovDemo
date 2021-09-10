@@ -16,7 +16,7 @@ namespace Project0.StoreApplication.Client
     private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
     private static readonly ProductSingleton _productSingleton = ProductSingleton.Instance;
     private static readonly OrderSingleton _orderSingleton = OrderSingleton.Instance;
-    private const string _logFilePath = @"/home/gulom/revature/gulomjon_repo/data/logs.txt";
+    // private const string _logFilePath = @"/home/gulom/revature/gulomjon_repo/data/logs.txt";
 
     /// <summary>
     /// Defines the Main method of Program Class
