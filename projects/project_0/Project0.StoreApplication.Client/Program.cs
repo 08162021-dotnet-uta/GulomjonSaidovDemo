@@ -41,7 +41,7 @@ namespace Project0.StoreApplication.Client
       int num1;
       do
       {
-        Console.WriteLine("Welcome to Target! Are you a customer or store manager?");
+        Console.WriteLine("Welcome to Target! Are you store manageror a customer?");
         Console.WriteLine("Press 1 for customer, 2 for Store Manager.");
         string input = Console.ReadLine();
         unsuccessful = int.TryParse(input, out num1);

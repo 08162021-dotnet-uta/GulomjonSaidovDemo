@@ -1,2 +1,55 @@
 2021-09-01 06:32:20.735 -07:00 [INF] Logging Started!
 2021-09-01 06:32:26.435 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Order>
+2021-09-01 06:36:34.459 -07:00 [INF] Logging Started!
+2021-09-01 06:36:39.633 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Order>
+2021-09-01 06:58:46.306 -07:00 [INF] Logging Started!
+2021-09-01 06:58:53.731 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Order>
+2021-09-01 07:14:17.620 -07:00 [INF] Logging Started!
+2021-09-01 07:14:21.353 -07:00 [INF] method: Capture()
+2021-09-01 07:14:21.354 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Abstracts.Store>
+2021-09-01 07:14:27.112 -07:00 [INF] Input captured "CaptureInput()": 3
+2021-09-01 07:14:27.113 -07:00 [INF] method: Capture()
+2021-09-01 07:14:27.113 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Product>
+2021-09-01 07:14:31.373 -07:00 [INF] Input captured "CaptureInput()": 5
+2021-09-01 07:17:36.968 -07:00 [INF] Logging Started!
+2021-09-01 07:17:39.935 -07:00 [INF] method: Capture()
+2021-09-01 07:17:39.935 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Abstracts.Store>
+2021-09-01 08:17:14.688 -07:00 [INF] Logging Started!
+2021-09-01 08:17:24.969 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Order>
+2021-09-01 08:20:25.501 -07:00 [INF] Logging Started!
+2021-09-01 08:20:27.494 -07:00 [INF] method: Capture()
+2021-09-01 08:20:27.494 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Abstracts.Store>
+2021-09-01 08:20:36.762 -07:00 [INF] Input captured "CaptureInput()": 1
+2021-09-01 08:20:36.763 -07:00 [INF] method: Capture()
+2021-09-01 08:20:36.763 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Product>
+2021-09-01 08:20:49.800 -07:00 [INF] Input captured "CaptureInput()": 2
+2021-09-01 08:44:36.328 -07:00 [INF] Logging Started!
+2021-09-01 08:51:41.252 -07:00 [INF] Logging Started!
+2021-09-01 08:56:27.463 -07:00 [INF] Logging Started!
+2021-09-01 08:57:42.659 -07:00 [INF] Logging Started!
+2021-09-01 08:57:44.982 -07:00 [INF] method: Capture()
+2021-09-01 08:57:44.982 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Abstracts.Store>
+2021-09-01 08:57:46.218 -07:00 [INF] Input captured "CaptureInput()": 3
+2021-09-01 08:57:46.219 -07:00 [INF] method: Capture()
+2021-09-01 08:57:46.219 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Product>
+2021-09-01 08:57:49.160 -07:00 [INF] Input captured "CaptureInput()": 1
+2021-09-01 08:59:20.722 -07:00 [INF] Logging Started!
+2021-09-01 08:59:52.775 -07:00 [INF] Logging Started!
+2021-09-01 09:00:01.436 -07:00 [INF] method: Capture()
+2021-09-01 09:00:01.438 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Abstracts.Store>
+2021-09-01 09:00:14.483 -07:00 [INF] Input captured "CaptureInput()": 1
+2021-09-01 09:00:14.484 -07:00 [INF] method: Capture()
+2021-09-01 09:00:14.484 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Product>
+2021-09-01 09:00:34.168 -07:00 [INF] Input captured "CaptureInput()": 6
+2021-09-01 09:01:14.003 -07:00 [INF] Logging Started!
+2021-09-01 09:01:55.131 -07:00 [INF] Logging Started!
+2021-09-01 09:02:01.386 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Order>
+2021-09-09 18:16:12.193 -07:00 [INF] Logging Started!
+2021-09-09 18:16:15.993 -07:00 [INF] method: Capture()
+2021-09-09 18:16:15.993 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Abstracts.Store>
+2021-09-09 18:16:21.052 -07:00 [INF] Input captured "CaptureInput()": 2
+2021-09-09 18:16:21.053 -07:00 [INF] method: Capture()
+2021-09-09 18:16:21.053 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Product>
+2021-09-09 18:16:24.730 -07:00 [INF] Input captured "CaptureInput()": 9
+2021-09-09 18:16:27.890 -07:00 [INF] Logging Started!
+2021-09-09 18:16:32.082 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Order>

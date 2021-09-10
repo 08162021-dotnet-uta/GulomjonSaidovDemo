@@ -40,4 +40,9 @@
     <Name>Phone</Name>
     <Price>1100</Price>
   </Product>
+  <Product>
+    <ProductId>0</ProductId>
+    <Name>Iphone 12</Name>
+    <Price>1200</Price>
+  </Product>
 </ArrayOfProduct>

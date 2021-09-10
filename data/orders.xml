@@ -120,4 +120,44 @@
       <Price>150</Price>
     </Product>
   </Order>
+  <Order>
+    <OrderId>0</OrderId>
+    <Customer>
+      <Name>New</Name>
+      <CustomerId>0</CustomerId>
+      <Orders />
+    </Customer>
+    <OrderDate>2021-09-01T07:14:45.7738221-07:00</OrderDate>
+    <Store xsi:type="West">
+      <Name>San Francisco West at Geary and Masonic</Name>
+      <StoreId>3</StoreId>
+      <Orders />
+      <Products />
+    </Store>
+    <Product>
+      <ProductId>5</ProductId>
+      <Name>Samsung Tablet</Name>
+      <Price>800</Price>
+    </Product>
+  </Order>
+  <Order>
+    <OrderId>0</OrderId>
+    <Customer>
+      <Name>gulom</Name>
+      <CustomerId>0</CustomerId>
+      <Orders />
+    </Customer>
+    <OrderDate>2021-09-01T09:00:55.3222171-07:00</OrderDate>
+    <Store xsi:type="Colma">
+      <Name>Colma on Junipero Serra Blvd</Name>
+      <StoreId>1</StoreId>
+      <Orders />
+      <Products />
+    </Store>
+    <Product>
+      <ProductId>6</ProductId>
+      <Name>Bose II Head Phone</Name>
+      <Price>300</Price>
+    </Product>
+  </Order>
 </ArrayOfOrder>
