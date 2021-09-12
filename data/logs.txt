@@ -54,3 +54,6 @@
 2021-09-09 18:16:27.890 -07:00 [INF] Logging Started!
 2021-09-09 18:16:32.082 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Order>
 2021-09-09 18:26:33.761 -07:00 [INF] Logging Started!
+2021-09-11 17:53:32.657 -07:00 [INF] Logging Started!
+2021-09-11 17:53:42.005 -07:00 [INF] Method: Output<Project0.StoreApplication.Domain.Models.Order>
+2021-09-11 18:06:44.607 -07:00 [INF] Logging Started!

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Project0.StoreApplication.Client.Singletons;
 using Project0.StoreApplication.Domain.Abstracts;
 using Project0.StoreApplication.Domain.Models;
+using Project0.StoreApplication.Storage;
 using Serilog;
 
 namespace Project0.StoreApplication.Client
@@ -16,7 +17,7 @@ namespace Project0.StoreApplication.Client
     private static readonly StoreSingleton _storeSingleton = StoreSingleton.Instance;
     private static readonly ProductSingleton _productSingleton = ProductSingleton.Instance;
     private static readonly OrderSingleton _orderSingleton = OrderSingleton.Instance;
-    // private const string _logFilePath = @"/home/gulom/revature/gulomjon_repo/data/logs.txt";
+    private const string _logFilePath = @"C:\Users\gulom\source\repos\08162021-dotnet-uta\GulomjonSaidovRepo1\data\logs.txt";
 
     /// <summary>
     /// Defines the Main method of Program Class
@@ -25,7 +26,8 @@ namespace Project0.StoreApplication.Client
     private static void Main(string[] args)
     {
 
-      Run();
+            //Run();
+            HelloSql();
     }
 
     /// <summary>
@@ -150,17 +152,19 @@ namespace Project0.StoreApplication.Client
       return selected - 1;
     }
 
-    // private static void HelloSQL()
-    // {
-    //   var def = new DemoEF();
+        private static void HelloSql()
+        {
+            Log.Logger = new LoggerConfiguration().WriteTo.File(_logFilePath).CreateLogger();
+            Log.Information("Logging Started!");
+            var def = new DemoEF();
 
-    //   def.SetCustomer(new Customer());
+            //def.setcustomer(new Customer());
 
-    //   foreach (var item in def.GetCustomers())
-    //   {
-    //     Console.WriteLine(item);
-    //   }
+            foreach (var item in def.GetCustomers())
+            {
+                Console.WriteLine(item);
+            }
 
-    // }
-  }
+        }
+    }
 }

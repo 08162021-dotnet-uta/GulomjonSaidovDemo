@@ -8,7 +8,7 @@ namespace Project0.StoreApplication.Domain.Abstracts
   [XmlInclude(typeof(Colma))]
   [XmlInclude(typeof(Stonestown))]
   [XmlInclude(typeof(West))]
-  public abstract class Store
+  public class Store
   {
     public string Name { get; set; }
     public int StoreId { get; set; }

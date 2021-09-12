@@ -10,7 +10,7 @@ namespace Project0.StoreApplication.Storage.Repositories
   /// </summary>
   public class CustomerRepository : IRepository<Customer>
   {
-    private const string _path = @"/home/gulom/revature/gulomjon_repo/data/customers.xml";
+    private const string _path = @"C:\Users\gulom\source\repos\08162021-dotnet-uta\GulomjonSaidovRepo1\data\customers.xml";
     private static readonly FileAdapter _fileAdapter = new FileAdapter();
 
     public CustomerRepository()

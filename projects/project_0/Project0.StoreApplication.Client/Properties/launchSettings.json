@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Project0.StoreApplication.Client": {
+      "commandName": "Project"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}
