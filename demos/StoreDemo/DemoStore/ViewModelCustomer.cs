@@ -1,6 +1,6 @@
 namespace DemoStore
 {
-  internal class Customer
+  internal class ViewModelCustomer
   {
     private string fname;
     public string Fname
@@ -23,8 +23,8 @@ namespace DemoStore
     }
     public string Lname { get; set; }
 
-    public Customer() { }
-    public Customer(string fname, string lname)
+    public ViewModelCustomer() { }
+    public ViewModelCustomer(string fname, string lname)
     {
       this.Fname = fname;
       this.Lname = lname;
