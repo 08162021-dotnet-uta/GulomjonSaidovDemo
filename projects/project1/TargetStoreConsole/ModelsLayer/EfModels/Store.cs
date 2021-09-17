@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace TargetStoreDbContext.Models
+namespace TargetStore
 {
     public partial class Store
     {

@@ -2,10 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>5818f834-0e1c-4378-90a1-2930c9133e16</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\TargetStoreConsole\ModelsLayer\ModelsLayer.csproj" />
+    <ProjectReference Include="..\..\TargetStoreConsole\TargetStoreBusinessLayer\TargetStoreBusinessLayer.csproj" />
   </ItemGroup>
 
 </Project>

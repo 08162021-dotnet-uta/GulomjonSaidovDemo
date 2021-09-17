@@ -7,11 +7,15 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Rewrite;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using TargetStoreBusinessLayer;
+using TargetStoreBusinessLayer.Interfaces;
+using TargetStoreDbContext.Models;
 
 namespace TargetStoreUi
 {
@@ -33,7 +37,22 @@ namespace TargetStoreUi
       {
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "TargetStoreUi", Version = "v1" });
       });
-    }
+            // if db optins is already configured, don't do anything
+            //otherwise use the Connection string in secrets.json
+            services.AddDbContext<StoreAppContext>(options =>
+            {
+                if (!options.IsConfigured)
+                {
+                    options.UseSqlServer(Configuration.GetConnectionString("DevDb"));
+                }
+            });
+
+            // registering classes with the DI system.
+            services.AddScoped <ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IStoreRepository, StoreRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IModelMapper, ModelMapper>();
+        }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
