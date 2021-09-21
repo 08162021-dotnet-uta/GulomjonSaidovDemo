@@ -1,0 +1,16 @@
+{
+  "name": "TypeScriptTutorial",
+  "version": "1.0.0",
+  "description": "Typescirpt tutorial",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Gulomjon Saidov",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  }
+}
