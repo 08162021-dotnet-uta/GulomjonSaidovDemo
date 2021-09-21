@@ -5,9 +5,11 @@ namespace TargetStore
 {
   public class ViewModelCustomer
   {
+    
     private string fname;
     private string lname;
 
+    public int CustomerId { get; set; }
     [StringLength(20, MinimumLength = 1)]
     public string Fname
     {

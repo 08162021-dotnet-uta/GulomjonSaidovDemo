@@ -38,10 +38,21 @@ namespace TargetStoreUi.Controllers
             return customers1;
         }
 
-        // GET: CustomerController/Create
-        public ActionResult Create()
+        // POST: CustomerController/Create
+        [HttpPost("register")]
+        public async Task<ActionResult<ViewModelCustomer>> Create(ViewModelCustomer c)
         {
-            return View();
+            if (!ModelState.IsValid) return BadRequest();
+
+            //ViewModelCustomer c = new ViewModelCustomer() { Fname = fname, Lname = lname };
+            // send fname and lname into a method of the business layer to check the Db for that person
+            ViewModelCustomer c1 = await _customerrepo.RegisterCustomerAsync(c);
+            if (c1 == null)
+            {
+                return NotFound();
+            }
+
+            return Created($"`~customer/{c1.CustomerId}", c1); 
         }
 
         // POST: CustomerController/Create
@@ -100,5 +111,28 @@ namespace TargetStoreUi.Controllers
                 return View();
             }
         }
-    }
-}
+
+        /// <summary>
+        /// This method takes first and last names and returns a validated customer
+        /// if not found, returns NotFound()    
+        /// </summary>
+        /// <param name="fname"></param>
+        /// <param name="lname"></param>
+        /// <returns></returns>
+        [HttpGet("login/{fname}/{lname}")]
+        public async Task<ActionResult<ViewModelCustomer>> Login(string fname, string lname)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            ViewModelCustomer c = new ViewModelCustomer() { Fname = fname, Lname = lname };
+            // send fname and lname into a method of the business layer to check the Db for that person
+            ViewModelCustomer c1 = await _customerrepo.LoginCustomerAsync(c);
+            if (c1 == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(c1);
+        }
+    }// EoC
+}// EoN

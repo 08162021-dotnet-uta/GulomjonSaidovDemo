@@ -24,10 +24,18 @@ const storesBtn = document.querySelector(".stores");
 
 //})
 
+function Login() {
+    location.href = "login.html";
+}
 
 function SeeCustomers() {
     location.href = "customers.html";
 }
+
+function Register() {
+    location.href = "register.html";
+}
+
 
 storesBtn.addEventListener("click", () => {
     location.href = "stores.html";
