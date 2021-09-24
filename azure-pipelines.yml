@@ -67,6 +67,17 @@ stages:
           command: 'publish'
           publishWebProjects: true
           projects: $(pathtosolution)
+          # creates an 'Artifact' and stores it in the DefaultWorkingDirectory on Azure
           zipAfterPublish: true
-      
+      - task: AzureRmWebAppDeployment@4
+        displayName: Deployment
+        inputs:
+          ConnectionType: 'AzureRM'
+          azureSubscription: 'Azure subscription 1(4)(2c1de073-9f0b-4613-9eea-d9b009bdd0a8)'
+          appType: 'webApp'
+          WebAppName: 'storeapp'
+          # deployToSlotOrASE: true
+          # ResourceGroupName: 'Project1'
+          # SlotName: 'production'
+          packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
       
