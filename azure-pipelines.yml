@@ -3,17 +3,81 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+# trigger:
+# - main
+
+# pool:
+#   vmImage: ubuntu-latest
+
+# steps:
+# - script: echo Hello, world!
+#   displayName: 'Run a one-line script'
+
+# - script: |
+#     echo Add other tasks to build, test, and deploy your project.
+#     echo See https://aka.ms/yaml
+#   displayName: 'Run a multi-line script'
+
+pr: none
 trigger:
-- main
+  branches:
+   include:
+     - main
+  paths:
+    include:
+      - projects/project1/TargetStoreJsAndApi/TargetStoreUi
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
+  
+variables:
+  pathtoproject: projects/project1/TargetStoreJsAndApi/TargetStoreUi
+  pathtosolution: projects/project1/TargetStoreJsAndApi/TargetStoreUi.sln
+  buildConfiguration: 'Release'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+stages:
+  - stage: Build
+    jobs:
+    - job: buildJob
+      steps:
+      #this step may be needed
+      # - task: DotNetCoreCLI@2
+      #   displayName: 'install .NET 5' 
+      #   inputs:
+      #     packageType: 'sdk'
+      #     version: '5.0.x'
+      - task: NuGetToolInstaller@1
+        
+      - task: NuGetCommand@2
+        inputs:
+        #may not be needed
+          command: 'restore'
+          restoreSolution: '$(pathtosolution)'
+  # - stage: SonarCloud
+  #   - job: SonarCloud
+  #     steps:
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  - stage: Publish
+    jobs:
+    - job: publish
+      steps:
+      - task: DotNetCoreCLI@2
+        displayName: Publishing
+        inputs:
+          command: 'publish'
+          publishWebProjects: true
+          projects: $(pathtosolution)
+          # creates an 'Artifact' and stores it in the DefaultWorkingDirectory on Azure
+          zipAfterPublish: true
+      - task: AzureRmWebAppDeployment@4
+        displayName: Deployment
+        inputs:
+          ConnectionType: 'AzureRM'
+          azureSubscription: 'Azure subscription 1(4)(2c1de073-9f0b-4613-9eea-d9b009bdd0a8)'
+          appType: 'webApp'
+          WebAppName: 'storeapp'
+          # deployToSlotOrASE: true
+          # ResourceGroupName: 'Project1'
+          # SlotName: 'production'
+          packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+      
