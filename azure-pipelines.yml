@@ -69,3 +69,4 @@ stages:
           projects: $(pathtosolution)
           zipAfterPublish: true
       
+      
