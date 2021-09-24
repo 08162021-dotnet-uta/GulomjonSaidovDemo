@@ -43,7 +43,7 @@ namespace TargetStoreUi
             {
                 if (!options.IsConfigured)
                 {
-                    options.UseSqlServer(Configuration.GetConnectionString("DevDb"));
+                    options.UseSqlServer(Configuration.GetConnectionString("AzureDb"));
                 }
             });
 
