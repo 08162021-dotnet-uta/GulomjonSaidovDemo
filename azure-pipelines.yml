@@ -3,21 +3,6 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-# trigger:
-# - main
-
-# pool:
-#   vmImage: ubuntu-latest
-
-# steps:
-# - script: echo Hello, world!
-#   displayName: 'Run a one-line script'
-
-# - script: |
-#     echo Add other tasks to build, test, and deploy your project.
-#     echo See https://aka.ms/yaml
-#   displayName: 'Run a multi-line script'
-
 pr: none
 trigger:
   branches:
@@ -53,10 +38,48 @@ stages:
         #may not be needed
           command: 'restore'
           restoreSolution: '$(pathtosolution)'
-  # - stage: SonarCloud
-  #   - job: SonarCloud
-  #     steps:
+  
+  - stage: SonarCloud
+    jobs:
+      - job: SonarCloud
+        steps:
+          - task: SonarCloudPrepare@1
+            inputs:
+              SonarCloud: 'Sonarcloud-token-project1'
+              organization: 'gulomjonsaidov0961'
+              scannerMode: 'MSBuild'
+              projectKey: 'gulomjonsaidov0961_Proejct1'
+              projectName: 'Proejct1'
+              
+          - task: DotNetCoreCLI@2
+            displayName: Building
+            inputs:
+              command: 'build'
+              projects: '$(pathtosolution)'
+              workingDirectory: '$(pathtoproject)'
+              arguments: '--configuration $(buildConfiguration)'
+          
+          - task: DotNetCoreCLI@2
+            inputs:
+              command: 'test'
+              projects: '$(pathtosolution)'
+              arguments: '--configuration $(buildConfiguration) --collect "Code Coverage"'
+              testRunTitle: 'StoreApp Tests'
+              workingDirectory: '$(pathtoproject)'
+          
+          - task: PublishCodeCoverageResults@1
+            inputs:
+              codeCoverageTool: 'Cobertura'
+              summaryFileLocation: '**/cobertura/coverage.xml'
+              
+          - task: SonarCloudAnalyze@1
+          - task: SonarCloudPublish@1
+            inputs:
+              pollingTimeoutSec: '300'
 
+          
+
+    # last stage
   - stage: Publish
     jobs:
     - job: publish
