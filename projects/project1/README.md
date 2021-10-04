@@ -30,6 +30,7 @@ To-do list:
 ### Getting Started
 
 1. In your terminal, run the following command to clone the repo:
+
 `https://github.com/08162021-dotnet-uta/GulomjonSaidovRepo1.git`
 
 2. After cloning the repo, navigate to the "project1" folder:
